@@ -1,55 +1,41 @@
-import { ReactNode } from "react";
+"use client";
 
-interface FloatingCardProps {
-  title: string;
-  description: string;
-  icon?: ReactNode;
-  className?: string;
-}
+import { motion } from "framer-motion";
 
-export default function FloatingCard({
-  title,
-  description,
+function FloatingCard({
   icon,
-  className = "",
-}: FloatingCardProps) {
+  title,
+  className,
+  duration = 4,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  className: string;
+  duration?: number;
+}) {
   return (
-    <div
-      className={`
-        group
-        rounded-2xl
-        border
-        border-slate-200
-        bg-white/90
-        backdrop-blur-md
-        p-5
-        shadow-lg
-        transition-all
-        duration-300
-        hover:-translate-y-2
-        hover:shadow-2xl
-        ${className}
-      `}
+    <motion.div
+      animate={{
+        y: [0, -8, 0],
+      }}
+      transition={{
+        duration,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className={`absolute rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 shadow-xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${className}`}
     >
-      <div className="flex items-start gap-4">
-
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E8F9FA] text-[#176C73]">
+      <div className="flex items-center gap-3">
+        <div className="rounded-xl bg-teal-100 p-2 text-[#176C73]">
           {icon}
         </div>
 
-        <div className="flex-1">
-
-          <h3 className="text-lg font-semibold text-[#176C73]">
-            {title}
-          </h3>
-
-          <p className="mt-1 text-sm leading-6 text-slate-600">
-            {description}
-          </p>
-
-        </div>
-
+        <span className="text-sm font-semibold text-slate-700">
+          {title}
+        </span>
       </div>
-    </div>
+    </motion.div>
   );
 }
+
+export default FloatingCard;

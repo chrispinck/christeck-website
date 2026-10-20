@@ -1,7 +1,7 @@
 import Badge from "./Badge";
 
 interface SectionHeadingProps {
-  badge?: string;
+  eyebrow?: string;
   title: string;
   subtitle?: string;
   description?: string;
@@ -10,7 +10,7 @@ interface SectionHeadingProps {
 }
 
 export default function SectionHeading({
-  badge,
+  eyebrow,
   title,
   subtitle,
   description,
@@ -26,7 +26,7 @@ export default function SectionHeading({
     <div
       className={`flex max-w-3xl flex-col gap-5 ${alignment} ${className}`}
     >
-      {badge && <Badge>{badge}</Badge>}
+      {eyebrow && <Badge>{eyebrow}</Badge>}
 
       <div>
         <h2 className="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">

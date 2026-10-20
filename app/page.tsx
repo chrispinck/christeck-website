@@ -1,37 +1,26 @@
-import Navbar from "../components/layout/Navbar";
-import Hero from "../components/home/Hero";
-import TrustedStandards from "../components/home/TrustedStandards";
-import About from "../components/home/About";
-import Services from "../components/home/Services";
-import Industries from "../components/home/Industries";
-import WhyChoose from "../components/home/WhyChoose";
-import Projects from "../components/home/Projects";
-import Resources from "../components/home/Resources";
-import ContactCTA from "../components/home/ContactCTA";
-import Footer from "../components/layout/Footer";
+import Hero from "@/components/home/Hero";
+import About from "@/components/home/About";
+import Services from "@/components/home/Services";
+import Resources from "@/components/home/Resources";
+import ContactCTA from "@/components/home/ContactCTA";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
+    <main>
+      {/* Hero */}
+      <Hero />
 
-      <main>
-        <Hero />
+      {/* About CHRISTECK */}
+      <About />
 
-        <About />
+      {/* Engineering Services */}
+      <Services />
 
-        <Services />
+      {/* Knowledge Centre */}
+      <Resources />
 
-        <WhyChoose />
-
-        <Projects />
-
-        <Resources />
-
-        <ContactCTA />
-      </main>
-
-      <Footer />
-    </>
+      {/* Contact CTA */}
+      <ContactCTA />
+    </main>
   );
 }

@@ -67,7 +67,7 @@ export default function TrustedStandards() {
       <Container>
 
         <SectionHeading
-          badge="TRUSTED STANDARDS"
+          eyebrow="TRUSTED STANDARDS"
           title="Engineering Standards"
           subtitle="We Work With"
           description="Our engineering solutions are developed around internationally recognised standards, ensuring compliance, safety, reliability and long-term performance."
