@@ -18,36 +18,42 @@ import FeatureCard from "@/components/ui/FeatureCard";
 
 const services = [
   {
+    slug: "iec-61439-design-verification",
     icon: ShieldCheck,
     title: "IEC / AS/NZS 61439 Design Verification",
     description:
       "Professional engineering support for IEC 61439 and AS/NZS 61439 design verification, compliance assessment, and technical review.",
   },
   {
+    slug: "temperature-rise-assessment",
     icon: Thermometer,
     title: "Temperature Rise Assessment",
     description:
       "Thermal calculations and engineering assessments based on IEC TR 60890 for safe and reliable switchboard performance.",
   },
   {
+    slug: "lv-switchboard-engineering",
     icon: CircuitBoard,
     title: "LV Switchboard Engineering",
     description:
       "Complete low-voltage switchboard engineering including GA drawings, busbar layouts, BOMs and technical support.",
   },
   {
+    slug: "technical-documentation",
     icon: FileText,
     title: "Technical Documentation",
     description:
-      "Preparation of Declaration of Conformity, calculation reports, engineering documentation and project deliverables.",
+      "Preparation of technical declarations, calculation reports, engineering documentation and project deliverables, as applicable to the project scope.",
   },
   {
+    slug: "modular-enclosure-solutions",
     icon: Boxes,
     title: "Modular Enclosure Solutions",
     description:
       "Engineering support for modular enclosure systems suitable for industrial and commercial power distribution.",
   },
   {
+    slug: "busbar-system-design",
     icon: CircuitBoard,
     title: "Busbar System Design",
     description:
@@ -79,7 +85,7 @@ export default function Services() {
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service, index) => (
               <motion.div
-                key={service.title}
+                key={service.slug}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
@@ -92,7 +98,7 @@ export default function Services() {
                   icon={service.icon}
                   title={service.title}
                   description={service.description}
-                  href="/services"
+                  href={`/services/${service.slug}`}
                 />
               </motion.div>
             ))}
