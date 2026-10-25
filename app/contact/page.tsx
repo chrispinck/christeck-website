@@ -1,24 +1,23 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
   Mail,
   MapPin,
   MessageSquareText,
+  CheckCircle2,
+  AlertCircle,
+  LoaderCircle,
 } from "lucide-react";
 
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-export const metadata: Metadata = {
-  title: "Contact CHRISTECK | Engineering Knowledge + Engineering Services",
-  description:
-    "Contact CHRISTECK for LV switchboard engineering, IEC 61439 design verification support, temperature-rise assessment, busbar design, and technical documentation.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+const FUNCTION_URL =
+  "https://paxkxbgsnnczaqutfwos.supabase.co/functions/v1/submit-lead";
 
 const enquiryTopics = [
   "IEC 61439 Design Verification",
@@ -30,7 +29,87 @@ const enquiryTopics = [
   "Other Engineering Enquiry",
 ];
 
+type SubmissionState =
+  | { status: "idle"; message: "" }
+  | { status: "success"; message: string }
+  | { status: "error"; message: string };
+
 export default function ContactPage() {
+  const [submission, setSubmission] = useState<SubmissionState>({
+    status: "idle",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (isSubmitting) return;
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setIsSubmitting(true);
+    setSubmission({ status: "idle", message: "" });
+
+    const params = new URLSearchParams(window.location.search);
+
+    const payload = {
+      name: String(formData.get("name") ?? "").trim(),
+      company: String(formData.get("company") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      phone: String(formData.get("phone") ?? "").trim(),
+      service: String(formData.get("service") ?? "").trim(),
+      message: String(formData.get("message") ?? "").trim(),
+      website: String(formData.get("website") ?? "").trim(),
+      source_page: window.location.pathname,
+      referrer: document.referrer || "",
+      utm_source: params.get("utm_source") ?? "",
+      utm_medium: params.get("utm_medium") ?? "",
+      utm_campaign: params.get("utm_campaign") ?? "",
+      utm_term: params.get("utm_term") ?? "",
+      utm_content: params.get("utm_content") ?? "",
+    };
+
+    try {
+      const response = await fetch(FUNCTION_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || result?.success !== true) {
+        throw new Error(
+          result?.error ||
+            "We couldn't submit your enquiry. Please try again.",
+        );
+      }
+
+      setSubmission({
+        status: "success",
+        message:
+          "Thank you for contacting CHRISTECK. Your enquiry has been submitted successfully.",
+      });
+
+      form.reset();
+    } catch (error) {
+      setSubmission({
+        status: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <main>
       <section className="relative overflow-hidden bg-slate-950 py-20 text-white md:py-28">
@@ -148,14 +227,43 @@ export default function ContactPage() {
               </h2>
 
               <p className="mt-3 leading-7 text-slate-600">
-                Complete the form below to prepare your enquiry. Your email
-                application will open with the details ready to send.
+                Complete the form below to send your enquiry directly to
+                CHRISTECK.
               </p>
 
+              {submission.status === "success" && (
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="mt-6 flex items-start gap-3 rounded-xl border border-green-200 bg-green-50 p-4 text-green-800"
+                >
+                  <CheckCircle2
+                    className="mt-0.5 shrink-0"
+                    size={21}
+                  />
+                  <p className="text-sm leading-6">
+                    {submission.message}
+                  </p>
+                </div>
+              )}
+
+              {submission.status === "error" && (
+                <div
+                  role="alert"
+                  className="mt-6 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-red-800"
+                >
+                  <AlertCircle
+                    className="mt-0.5 shrink-0"
+                    size={21}
+                  />
+                  <p className="text-sm leading-6">
+                    {submission.message}
+                  </p>
+                </div>
+              )}
+
               <form
-                action="mailto:sales@christeck.in"
-                method="post"
-                encType="text/plain"
+                onSubmit={handleSubmit}
                 className="mt-8 space-y-5"
               >
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -169,9 +277,10 @@ export default function ContactPage() {
 
                     <input
                       id="name"
-                      name="Name"
+                      name="name"
                       type="text"
                       autoComplete="name"
+                      maxLength={120}
                       required
                       className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-[#2BA9B5] focus:ring-2 focus:ring-[#2BA9B5]/20"
                       placeholder="Your name"
@@ -188,9 +297,10 @@ export default function ContactPage() {
 
                     <input
                       id="company"
-                      name="Company"
+                      name="company"
                       type="text"
                       autoComplete="organization"
+                      maxLength={160}
                       className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-[#2BA9B5] focus:ring-2 focus:ring-[#2BA9B5]/20"
                       placeholder="Company name"
                     />
@@ -208,9 +318,10 @@ export default function ContactPage() {
 
                     <input
                       id="email"
-                      name="Reply Email"
+                      name="email"
                       type="email"
                       autoComplete="email"
+                      maxLength={254}
                       required
                       className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-[#2BA9B5] focus:ring-2 focus:ring-[#2BA9B5]/20"
                       placeholder="you@company.com"
@@ -227,9 +338,10 @@ export default function ContactPage() {
 
                     <input
                       id="phone"
-                      name="Phone"
+                      name="phone"
                       type="tel"
                       autoComplete="tel"
+                      maxLength={40}
                       className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-[#2BA9B5] focus:ring-2 focus:ring-[#2BA9B5]/20"
                       placeholder="Optional"
                     />
@@ -238,15 +350,15 @@ export default function ContactPage() {
 
                 <div>
                   <label
-                    htmlFor="topic"
+                    htmlFor="service"
                     className="mb-2 block text-sm font-medium text-slate-700"
                   >
                     Service Required *
                   </label>
 
                   <select
-                    id="topic"
-                    name="Service Required"
+                    id="service"
+                    name="service"
                     required
                     defaultValue=""
                     className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-[#2BA9B5] focus:ring-2 focus:ring-[#2BA9B5]/20"
@@ -273,26 +385,58 @@ export default function ContactPage() {
 
                   <textarea
                     id="message"
-                    name="Project Details"
+                    name="message"
                     required
+                    maxLength={5000}
                     rows={5}
                     className="w-full resize-y rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-[#2BA9B5] focus:ring-2 focus:ring-[#2BA9B5]/20"
                     placeholder="Describe your project, technical requirements, ratings, or questions..."
                   />
                 </div>
 
+                {/* Honeypot field: keep hidden from normal visitors. */}
+                <div
+                  aria-hidden="true"
+                  className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
+                >
+                  <label htmlFor="website">
+                    Leave this field empty
+                  </label>
+
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#176C73] px-6 py-4 font-semibold text-white transition hover:bg-[#12565c] sm:w-auto"
+                  disabled={isSubmitting}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#176C73] px-6 py-4 font-semibold text-white transition hover:bg-[#12565c] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                 >
-                  Prepare Email Enquiry
-                  <ArrowRight size={18} />
+                  {isSubmitting ? (
+                    <>
+                      <LoaderCircle
+                        size={18}
+                        className="animate-spin"
+                      />
+                      Submitting Enquiry...
+                    </>
+                  ) : (
+                    <>
+                      Submit Enquiry
+                      <ArrowRight size={18} />
+                    </>
+                  )}
                 </button>
 
                 <p className="text-sm leading-6 text-slate-500">
-                  This form uses your device&apos;s configured email
-                  application. It does not submit enquiries directly to a
-                  server.
+                  Your details will be used to respond to your enquiry.
+                  Please avoid including passwords or other sensitive
+                  information in your message.
                 </p>
               </form>
             </div>
