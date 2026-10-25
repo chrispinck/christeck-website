@@ -74,12 +74,13 @@ export default function ContactPage() {
 
     try {
       const response = await fetch(FUNCTION_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "apikey": process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  },
+  body: JSON.stringify(payload),
+});
 
       const result = await response.json().catch(() => null);
 
