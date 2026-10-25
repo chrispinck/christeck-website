@@ -1,131 +1,128 @@
-"use client";
-
 import Link from "next/link";
 import {
   ShieldCheck,
   Thermometer,
   CircuitBoard,
   FileText,
-  Boxes,
+  Box,
+  Layers3,
   ArrowRight,
 } from "lucide-react";
-import { motion } from "framer-motion";
 
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
-import FeatureCard from "@/components/ui/FeatureCard";
 
 const services = [
   {
-    slug: "iec-61439-design-verification",
     icon: ShieldCheck,
-    title: "IEC / AS/NZS 61439 Design Verification",
+    number: "01",
+    title: "IEC 61439 Design Verification",
     description:
-      "Professional engineering support for IEC 61439 and AS/NZS 61439 design verification, compliance assessment, and technical review.",
+      "Engineering support for LV switchboard design verification, technical assessments, compliance documentation and verification planning.",
+    href: "/services/iec-61439-design-verification",
   },
   {
-    slug: "temperature-rise-assessment",
     icon: Thermometer,
+    number: "02",
     title: "Temperature Rise Assessment",
     description:
-      "Thermal calculations and engineering assessments based on IEC TR 60890 for safe and reliable switchboard performance.",
+      "Temperature-rise calculations and thermal design reviews for low-voltage switchboards, based on applicable methods and available design data.",
+    href: "/services/temperature-rise-assessment",
   },
   {
-    slug: "lv-switchboard-engineering",
     icon: CircuitBoard,
+    number: "03",
     title: "LV Switchboard Engineering",
     description:
-      "Complete low-voltage switchboard engineering including GA drawings, busbar layouts, BOMs and technical support.",
+      "Technical design support for low-voltage switchboards, including layouts, component arrangements and engineering design reviews.",
+    href: "/services/lv-switchboard-engineering",
   },
   {
-    slug: "technical-documentation",
     icon: FileText,
+    number: "04",
     title: "Technical Documentation",
     description:
-      "Preparation of technical declarations, calculation reports, engineering documentation and project deliverables, as applicable to the project scope.",
+      "Structured engineering documentation, technical reports, calculation records and supporting documents for switchboard projects.",
+    href: "/services/technical-documentation",
   },
   {
-    slug: "modular-enclosure-solutions",
-    icon: Boxes,
+    icon: Box,
+    number: "05",
     title: "Modular Enclosure Solutions",
     description:
-      "Engineering support for modular enclosure systems suitable for industrial and commercial power distribution.",
+      "Engineering support for modular enclosure selection, configuration, dimensions and integration into LV switchboard assemblies.",
+    href: "/services/modular-enclosure-solutions",
   },
   {
-    slug: "busbar-system-design",
-    icon: CircuitBoard,
+    icon: Layers3,
+    number: "06",
     title: "Busbar System Design",
     description:
-      "Busbar sizing, layout verification and engineering support for reliable LV power distribution systems.",
+      "Busbar sizing support, current-carrying assessments, conductor arrangement reviews and related engineering calculations.",
+    href: "/services/busbar-system-design",
   },
 ];
 
 export default function Services() {
   return (
-    <div id="services" className="scroll-mt-20">
-      <Section background="white" spacing="xl">
-        <Container>
-          {/* Section Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-          >
-            <SectionHeading
-              eyebrow="Our Services"
-              title="Engineering Solutions"
-              subtitle="Built Around Compliance & Performance"
-              description="CHRISTECK provides professional engineering services for low-voltage power distribution systems, helping manufacturers, EPC contractors and consultants deliver standards-compliant projects."
-            />
-          </motion.div>
+    <Section background="white" spacing="xl" id="services">
+      <Container>
+       <SectionHeading
+  eyebrow="Our Services"
+  title="Engineering Solutions Built Around Compliance & Performance"
+  description="CHRISTECK provides professional engineering services for low-voltage power distribution systems, helping manufacturers, EPC contractors and consultants deliver standards-compliant projects."
+/>
 
-          {/* Service Cards */}
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.slug}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.07,
-                }}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => {
+            const Icon = service.icon;
+
+            return (
+              <article
+                key={service.number}
+                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-lg"
               >
-                <FeatureCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  href={`/services/${service.slug}`}
-                />
-              </motion.div>
-            ))}
-          </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-[#176C73] transition group-hover:bg-[#176C73] group-hover:text-white">
+                    <Icon size={25} />
+                  </div>
 
-          {/* Section CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-14 text-center"
+                  <span className="text-sm font-semibold tracking-wider text-slate-300">
+                    {service.number}
+                  </span>
+                </div>
+
+                <h3 className="mt-6 text-xl font-bold leading-snug text-slate-900">
+                  {service.title}
+                </h3>
+
+                <p className="mt-3 flex-grow text-sm leading-7 text-slate-600">
+                  {service.description}
+                </p>
+
+                <Link
+                  href={service.href}
+                  className="mt-6 inline-flex items-center gap-2 font-semibold text-[#176C73] transition hover:gap-3"
+                >
+                  Learn More
+                  <ArrowRight size={17} />
+                </Link>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#176C73] px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#145d63]"
           >
-            <Link
-              href="/services"
-              className="group inline-flex items-center gap-2 rounded-xl bg-[#176C73] px-8 py-4 font-semibold text-white shadow-lg shadow-[#176C73]/15 transition-all duration-300 hover:-translate-y-1 hover:bg-[#145d63] hover:shadow-xl"
-            >
-              Explore All Engineering Services
-
-              <ArrowRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
-          </motion.div>
-        </Container>
-      </Section>
-    </div>
+            View All Services
+            <ArrowRight size={18} />
+          </Link>
+        </div>
+      </Container>
+    </Section>
   );
 }

@@ -1,51 +1,44 @@
-import { ReactNode } from "react";
-import clsx from "clsx";
+import type { ReactNode, HTMLAttributes } from "react";
 
-interface SectionProps {
+type SectionBackground = "white" | "light" | "dark";
+type SectionSpacing = "sm" | "md" | "lg" | "xl";
+
+interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
-  id?: string;
-  className?: string;
-  background?: "white" | "slate" | "teal" | "gradient";
-  spacing?: "sm" | "md" | "lg" | "xl";
-  divider?: boolean;
+  background?: SectionBackground;
+  spacing?: SectionSpacing;
 }
 
-const backgrounds = {
+const backgroundStyles: Record<SectionBackground, string> = {
   white: "bg-white",
-  slate: "bg-slate-50",
-  teal: "bg-teal-50",
-  gradient: "bg-gradient-to-b from-white via-slate-50 to-white",
+  light: "bg-slate-50",
+  dark: "bg-slate-900 text-white",
 };
 
-const spacing = {
-  sm: "py-12",
-  md: "py-20",
-  lg: "py-28",
-  xl: "py-36",
+const spacingStyles: Record<SectionSpacing, string> = {
+  sm: "py-8 sm:py-10",
+  md: "py-10 sm:py-14",
+  lg: "py-14 sm:py-16",
+  xl: "py-16 sm:py-20 lg:py-24",
 };
 
 export default function Section({
   children,
-  id,
-  className,
   background = "white",
-  spacing: sectionSpacing = "lg",
-  divider = false,
+  spacing = "lg",
+  className = "",
+  ...props
 }: SectionProps) {
-  return (
-    <section
-      id={id}
-      className={clsx(
-        "relative scroll-mt-24",
-        backgrounds[background],
-        spacing[sectionSpacing],
-        className
-      )}
-    >
-      {divider && (
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-      )}
+  const combinedClasses = [
+    backgroundStyles[background],
+    spacingStyles[spacing],
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
+  return (
+    <section className={combinedClasses} {...props}>
       {children}
     </section>
   );

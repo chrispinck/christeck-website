@@ -104,7 +104,7 @@ export default function ServicesPage() {
       <Section background="white" spacing="xl">
         <Container>
           <SectionHeading
-            eyebrow="Our Capabilities"
+            eyebrow="Our Services"
             title="Engineering Services"
             subtitle="Technical expertise for practical engineering challenges"
             description="Explore our services to learn about the scope of work, technical capabilities and potential deliverables."
