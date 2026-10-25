@@ -54,7 +54,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <Section id="industries" background="slate" spacing="xl">
+    <Section id="industries" background="light" spacing="xl">
       <Container>
         <SectionHeading
           eyebrow="Industries We Serve"

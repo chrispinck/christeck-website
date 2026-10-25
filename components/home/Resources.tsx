@@ -46,7 +46,7 @@ const resources = [
 export default function Resources() {
   return (
     <div id="resources" className="scroll-mt-20">
-      <Section background="slate" spacing="xl">
+      <Section background="light" spacing="xl">
         <Container>
           {/* Heading */}
           <motion.div

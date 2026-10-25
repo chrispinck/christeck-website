@@ -39,7 +39,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <Section background="slate" spacing="lg">
+    <Section background="light" spacing="lg">
       <Container size="md">
         <SectionHeading
           eyebrow="Frequently Asked Questions"

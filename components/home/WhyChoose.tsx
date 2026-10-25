@@ -52,7 +52,7 @@ const reasons = [
 
 export default function WhyChoose() {
   return (
-    <Section background="gradient" spacing="xl">
+    <Section background="light" spacing="xl">
       <Container>
         <SectionHeading
           eyebrow="Why Choose CHRISTECK"

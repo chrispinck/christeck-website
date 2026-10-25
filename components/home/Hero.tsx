@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div id="hero" className="scroll-mt-20">
       <Section
-        background="gradient"
+        background="light"
         spacing="md"
         className="overflow-hidden pt-12 lg:pt-16"
       >

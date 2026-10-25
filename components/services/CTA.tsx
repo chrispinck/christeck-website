@@ -7,7 +7,7 @@ import Section from "@/components/ui/Section";
 export default function CTA() {
   return (
     <Section
-      background="gradient"
+      background="light"
       spacing="xl"
       className="overflow-hidden"
     >

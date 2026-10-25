@@ -53,7 +53,7 @@ const expertise = [
 export default function About() {
   return (
     <div id="about" className="scroll-mt-20">
-      <Section background="slate" spacing="xl">
+      <Section background="light" spacing="xl">
         <Container>
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
             {/* Left Content */}

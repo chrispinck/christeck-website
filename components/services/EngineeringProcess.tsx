@@ -42,7 +42,7 @@ const steps = [
 
 export default function EngineeringProcess() {
   return (
-    <Section background="slate" spacing="lg">
+    <Section background="light" spacing="lg">
       <Container>
         <SectionHeading
           eyebrow="Our Process"

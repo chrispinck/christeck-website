@@ -39,7 +39,7 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <Section
-      background="gradient"
+      background="light"
       spacing="xl"
       className="overflow-hidden"
     >
