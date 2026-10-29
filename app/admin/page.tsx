@@ -22,6 +22,11 @@ type Lead = {
   notes: string | null;
 };
 
+type LeadUpdate = {
+  status?: string | null;
+  notes?: string | null;
+};
+
 const statuses = [
   { value: "new", label: "New" },
   { value: "contacted", label: "Contacted" },
@@ -131,10 +136,7 @@ export default function AdminDashboardPage() {
     });
   }, [leads, search, statusFilter]);
 
-  async function updateLead(
-    lead: Lead,
-    updates: Partial<Pick<Lead, "status" | "notes">>
-  ) {
+  async function updateLead(lead: Lead, updates: LeadUpdate) {
     if (saving) return;
 
     setSaving(true);
@@ -163,6 +165,7 @@ export default function AdminDashboardPage() {
         return;
       }
 
+      // Save the enquiry status or internal notes.
       const { data: updatedRows, error: updateError } = await supabase
         .from("leads")
         .update(updates)
@@ -195,7 +198,9 @@ export default function AdminDashboardPage() {
       );
     } catch (err) {
       console.error("Unexpected lead update error:", err);
-      setError("An unexpected error occurred while saving. Please try again.");
+      setError(
+        "An unexpected error occurred while saving. Please try again."
+      );
     } finally {
       setSaving(false);
     }
@@ -366,10 +371,7 @@ export default function AdminDashboardPage() {
                           aria-label={`Status for ${lead.name}`}
                         >
                           {statuses.map((status) => (
-                            <option
-                              key={status.value}
-                              value={status.value}
-                            >
+                            <option key={status.value} value={status.value}>
                               {status.label}
                             </option>
                           ))}
