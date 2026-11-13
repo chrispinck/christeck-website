@@ -11,43 +11,47 @@ import {
 } from "lucide-react";
 
 import Container from "@/components/ui/Container";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title:
-    "LV Switchboard Engineering Services | IEC 61439 | CHRISTECK",
+  title: "IEC 61439 Design Verification Support",
 
   description:
-    "Explore CHRISTECK engineering services including LV switchboard design, IEC 61439 design verification support, temperature-rise assessment, busbar design and technical documentation.",
+    "CHRISTECK provides engineering support for IEC 61439 and AS/NZS 61439 design verification, technical reviews, verification evidence assessment and switchboard engineering documentation.",
 
   alternates: {
-    canonical: "/services",
+    canonical: "/services/iec-61439-design-verification",
   },
 
   openGraph: {
     type: "website",
-    url: "https://christeck.in/services",
+    url: "https://christeck.in/services/iec-61439-design-verification",
     siteName: "CHRISTECK",
-    title:
-      "LV Switchboard Engineering Services | CHRISTECK",
+    title: "IEC 61439 Design Verification Support",
     description:
-      "Professional engineering support for LV switchboard manufacturers, panel builders and consultants. Explore IEC 61439, temperature-rise assessment, busbar design and technical documentation services.",
+      "Engineering support for LV switchboard manufacturers and project teams working with IEC 61439 and AS/NZS 61439 design verification requirements.",
     locale: "en_IN",
     images: [
       {
         url: "/images/hero-engineering-v1.png",
         width: 840,
         height: 840,
-        alt: "CHRISTECK LV switchboard engineering services",
+        alt: "CHRISTECK IEC 61439 engineering support",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "LV Switchboard Engineering Services | CHRISTECK",
+    title: "IEC 61439 Design Verification Support",
     description:
-      "Explore professional LV switchboard engineering, IEC 61439 design verification, temperature-rise assessment and busbar design services.",
+      "Professional engineering support for IEC 61439 design verification, technical reviews and switchboard documentation.",
     images: ["/images/hero-engineering-v1.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -96,6 +100,17 @@ const clients = [
 export default function IEC61439DesignVerificationPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://christeck.in/" },
+          { name: "Services", url: "https://christeck.in/services" },
+          {
+            name: "IEC 61439 Design Verification",
+            url: "https://christeck.in/services/iec-61439-design-verification",
+          },
+        ]}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-50 via-white to-teal-50 py-20 sm:py-24">
         <Container>

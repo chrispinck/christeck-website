@@ -14,6 +14,7 @@ import {
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "LV Switchboard Busbar System Design",
@@ -127,6 +128,16 @@ const process = [
 export default function BusbarSystemDesignPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://christeck.in/" },
+          { name: "Services", url: "https://christeck.in/services" },
+          {
+            name: "Busbar System Design",
+            url: "https://christeck.in/services/busbar-system-design",
+          },
+        ]}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50 py-20 sm:py-24">
         <Container>

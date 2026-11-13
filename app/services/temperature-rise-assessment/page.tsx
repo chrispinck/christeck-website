@@ -14,13 +14,13 @@ import {
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title:
-    "LV Switchboard Temperature Rise Assessment | CHRISTECK",
+  title: "LV Switchboard Temperature Rise Assessment",
 
   description:
-    "LV switchboard temperature-rise calculations, thermal design reviews and engineering reports. CHRISTECK supports IEC TR 60890 assessments, power-loss evaluation and technical documentation.",
+    "CHRISTECK provides LV switchboard temperature-rise calculations, IEC TR 60890 assessments, thermal design reviews, power-loss evaluation and engineering reports.",
 
   alternates: {
     canonical: "/services/temperature-rise-assessment",
@@ -30,8 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://christeck.in/services/temperature-rise-assessment",
     siteName: "CHRISTECK",
-    title:
-      "LV Switchboard Temperature Rise Assessment | CHRISTECK",
+    title: "LV Switchboard Temperature Rise Assessment",
     description:
       "Engineering support for LV switchboard temperature-rise calculations, IEC TR 60890 assessments, power-loss evaluation, thermal design reviews and technical reporting.",
     locale: "en_IN",
@@ -47,8 +46,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title:
-      "LV Switchboard Temperature Rise Assessment | CHRISTECK",
+    title: "LV Switchboard Temperature Rise Assessment",
     description:
       "Temperature-rise calculations, thermal design reviews and engineering reports for low-voltage switchboard assemblies.",
     images: ["/images/hero-engineering-v1.png"],
@@ -135,6 +133,17 @@ const applications = [
 export default function TemperatureRiseAssessmentPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://christeck.in/" },
+          { name: "Services", url: "https://christeck.in/services" },
+          {
+            name: "Temperature Rise Assessment",
+            url: "https://christeck.in/services/temperature-rise-assessment",
+          },
+        ]}
+      />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50 py-20 sm:py-24">
         <Container>

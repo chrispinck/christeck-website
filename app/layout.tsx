@@ -4,6 +4,8 @@ import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import OrganizationSchema from "@/components/seo/OrganizationSchema";
+import ProfessionalServiceSchema from "@/components/seo/ProfessionalServiceSchema";
 
 const siteUrl = "https://christeck.in";
 
@@ -22,10 +24,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-title: {
-  default: "LV Switchboard Engineering & IEC 61439",
-  template: "%s | CHRISTECK",
-},
+  title: {
+    default: "LV Switchboard Engineering & IEC 61439",
+    template: "%s | CHRISTECK",
+  },
 
   description:
     "CHRISTECK provides professional LV switchboard engineering, IEC 61439 design verification, AS/NZS 61439 support, temperature rise assessment, busbar design and technical documentation.",
@@ -119,6 +121,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
       <body className="bg-white text-slate-900 antialiased">
+        <OrganizationSchema />
+        <ProfessionalServiceSchema />
+
         <Navbar />
 
         <main className="min-h-screen pt-20">{children}</main>

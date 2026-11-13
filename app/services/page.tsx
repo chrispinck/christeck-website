@@ -12,6 +12,7 @@ import {
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "LV Switchboard Engineering Services",
@@ -102,6 +103,13 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://christeck.in/" },
+          { name: "Services", url: "https://christeck.in/services" },
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 via-white to-teal-50 py-20 sm:py-24">
         <Container>
