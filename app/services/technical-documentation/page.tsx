@@ -16,11 +16,39 @@ import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Technical Documentation for LV Switchboards",
+  title: "LV Switchboard Technical Documentation",
   description:
-    "CHRISTECK provides technical documentation support for LV switchboard manufacturers, including engineering calculations, design records and compliance documentation.",
+    "Technical documentation for LV switchboards, including engineering reports, calculation sheets, design records and IEC 61439 documentation support.",
   alternates: {
     canonical: "/services/technical-documentation",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://christeck.in/services/technical-documentation",
+    siteName: "CHRISTECK",
+    title: "LV Switchboard Technical Documentation",
+    description:
+      "Structured engineering reports, calculation documentation, design records and compliance documentation support for LV switchboard projects.",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 840,
+        height: 840,
+        alt: "CHRISTECK LV switchboard technical documentation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LV Switchboard Technical Documentation",
+    description:
+      "Engineering reports, calculation sheets, design records and technical documentation for LV switchboard manufacturers.",
+    images: ["/images/hero-engineering-v1.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

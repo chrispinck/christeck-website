@@ -16,11 +16,39 @@ import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Busbar System Design for LV Switchboards",
+  title: "LV Switchboard Busbar System Design",
   description:
-    "CHRISTECK provides busbar engineering support for LV switchboards, including conductor sizing, current-carrying assessments, arrangement reviews and technical calculations.",
+    "LV switchboard busbar engineering for copper and aluminium systems, including conductor sizing, current-carrying assessments, arrangement reviews and technical calculations.",
   alternates: {
     canonical: "/services/busbar-system-design",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://christeck.in/services/busbar-system-design",
+    siteName: "CHRISTECK",
+    title: "LV Switchboard Busbar System Design",
+    description:
+      "Engineering support for copper and aluminium busbar sizing, current-carrying assessments, conductor arrangements, support spacing and technical calculations.",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 840,
+        height: 840,
+        alt: "CHRISTECK LV switchboard busbar engineering",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LV Switchboard Busbar System Design",
+    description:
+      "Busbar engineering support covering copper and aluminium conductor sizing, arrangement reviews and technical calculations.",
+    images: ["/images/hero-engineering-v1.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

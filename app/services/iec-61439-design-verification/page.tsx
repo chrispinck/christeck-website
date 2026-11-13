@@ -13,11 +13,41 @@ import {
 import Container from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "IEC / AS/NZS 61439 Design Verification Support",
+  title:
+    "LV Switchboard Engineering Services | IEC 61439 | CHRISTECK",
+
   description:
-    "Engineering support for IEC 61439 and AS/NZS 61439 low-voltage switchboard design verification, technical assessments and supporting documentation.",
+    "Explore CHRISTECK engineering services including LV switchboard design, IEC 61439 design verification support, temperature-rise assessment, busbar design and technical documentation.",
+
   alternates: {
-    canonical: "/services/iec-61439-design-verification",
+    canonical: "/services",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://christeck.in/services",
+    siteName: "CHRISTECK",
+    title:
+      "LV Switchboard Engineering Services | CHRISTECK",
+    description:
+      "Professional engineering support for LV switchboard manufacturers, panel builders and consultants. Explore IEC 61439, temperature-rise assessment, busbar design and technical documentation services.",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 840,
+        height: 840,
+        alt: "CHRISTECK LV switchboard engineering services",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "LV Switchboard Engineering Services | CHRISTECK",
+    description:
+      "Explore professional LV switchboard engineering, IEC 61439 design verification, temperature-rise assessment and busbar design services.",
+    images: ["/images/hero-engineering-v1.png"],
   },
 };
 

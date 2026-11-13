@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
+const siteUrl = "https://christeck.in";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -17,33 +19,30 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://christeck.in";
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title: {
-    default: "CHRISTECK | Electrical Engineering Solutions",
-    template: "%s | CHRISTECK",
-  },
+title: {
+  default: "LV Switchboard Engineering & IEC 61439",
+  template: "%s | CHRISTECK",
+},
 
   description:
-    "CHRISTECK provides LV switchboard engineering, IEC 61439 design verification, AS/NZS 61439 compliance support, temperature rise assessment, busbar design and technical documentation.",
+    "CHRISTECK provides professional LV switchboard engineering, IEC 61439 design verification, AS/NZS 61439 support, temperature rise assessment, busbar design and technical documentation.",
 
   applicationName: "CHRISTECK",
 
   keywords: [
     "CHRISTECK",
-    "Electrical Engineering Services",
     "LV Switchboard Engineering",
-    "Low Voltage Switchboard Design",
+    "LV Switchboard Design",
     "IEC 61439 Design Verification",
-    "AS/NZS 61439 Compliance",
-    "IEC TR 60890 Temperature Rise Calculation",
-    "Switchboard Temperature Rise Assessment",
-    "Busbar Design and Sizing",
+    "AS/NZS 61439 Engineering",
+    "IEC TR 60890 Temperature Rise Assessment",
+    "LV Switchboard Temperature Rise",
+    "Busbar System Design",
     "Switchboard Technical Documentation",
-    "Modular Enclosure Solutions",
+    "Electrical Engineering Services",
     "Electrical Engineering India",
     "Australian Switchboard Engineering",
   ],
@@ -66,23 +65,23 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "CHRISTECK",
-    title: "CHRISTECK | Electrical Engineering Solutions",
+    title: "LV Switchboard Engineering & IEC 61439 | CHRISTECK",
     description:
-      "Engineering Knowledge. Engineering Services. Professional support for LV switchboard engineering, IEC 61439 design verification, temperature rise assessment and technical documentation.",
+      "Engineering Knowledge. Engineering Services. Professional LV switchboard engineering, IEC 61439 design verification, temperature rise assessment and technical documentation.",
     locale: "en_IN",
     images: [
       {
         url: "/images/hero-engineering-v1.png",
         width: 840,
         height: 840,
-        alt: "CHRISTECK low-voltage switchboard engineering solutions",
+        alt: "CHRISTECK LV switchboard engineering solutions",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "CHRISTECK | Electrical Engineering Solutions",
+    title: "LV Switchboard Engineering & IEC 61439 | CHRISTECK",
     description:
       "Professional LV switchboard engineering, IEC 61439 design verification, temperature rise assessment and technical documentation.",
     images: ["/images/hero-engineering-v1.png"],

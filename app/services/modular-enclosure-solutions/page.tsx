@@ -18,9 +18,37 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Modular Enclosure Solutions for LV Switchboards",
   description:
-    "CHRISTECK provides engineering support for modular electrical enclosures, enclosure selection, dimensional coordination and LV switchboard integration.",
+    "Modular electrical enclosure engineering for LV switchboards, including enclosure selection, dimensional coordination, assembly layouts and switchgear integration.",
   alternates: {
     canonical: "/services/modular-enclosure-solutions",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://christeck.in/services/modular-enclosure-solutions",
+    siteName: "CHRISTECK",
+    title: "Modular Enclosure Solutions for LV Switchboards",
+    description:
+      "Engineering support for modular electrical enclosures, dimensional coordination, compartment arrangements and LV switchboard integration.",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 840,
+        height: 840,
+        alt: "CHRISTECK modular enclosure engineering solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Modular Enclosure Solutions for LV Switchboards",
+    description:
+      "Engineering support for modular enclosure selection, dimensional coordination and LV switchboard assembly integration.",
+    images: ["/images/hero-engineering-v1.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

@@ -16,11 +16,47 @@ import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Temperature Rise Assessment for LV Switchboards",
+  title:
+    "LV Switchboard Temperature Rise Assessment | CHRISTECK",
+
   description:
-    "CHRISTECK provides engineering support for LV switchboard temperature-rise calculations, thermal design reviews and technical documentation.",
+    "LV switchboard temperature-rise calculations, thermal design reviews and engineering reports. CHRISTECK supports IEC TR 60890 assessments, power-loss evaluation and technical documentation.",
+
   alternates: {
     canonical: "/services/temperature-rise-assessment",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://christeck.in/services/temperature-rise-assessment",
+    siteName: "CHRISTECK",
+    title:
+      "LV Switchboard Temperature Rise Assessment | CHRISTECK",
+    description:
+      "Engineering support for LV switchboard temperature-rise calculations, IEC TR 60890 assessments, power-loss evaluation, thermal design reviews and technical reporting.",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 840,
+        height: 840,
+        alt: "CHRISTECK LV switchboard temperature-rise assessment",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "LV Switchboard Temperature Rise Assessment | CHRISTECK",
+    description:
+      "Temperature-rise calculations, thermal design reviews and engineering reports for low-voltage switchboard assemblies.",
+    images: ["/images/hero-engineering-v1.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

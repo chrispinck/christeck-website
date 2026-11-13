@@ -14,11 +14,43 @@ import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Engineering Services",
+  title: "LV Switchboard Engineering Services",
   description:
-    "Explore CHRISTECK engineering services for LV switchboards, IEC 61439 design verification support, temperature-rise assessment, busbar design, technical documentation and modular enclosures.",
+    "Explore CHRISTECK LV switchboard engineering services, including IEC 61439 design verification support, temperature-rise assessment, busbar system design, technical documentation and modular enclosure solutions.",
+
   alternates: {
     canonical: "/services",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://christeck.in/services",
+    siteName: "CHRISTECK",
+    title: "LV Switchboard Engineering Services",
+    description:
+      "Professional LV switchboard engineering support for manufacturers, panel builders and consultants. Explore IEC 61439, temperature-rise assessment, busbar design and technical documentation services.",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 840,
+        height: 840,
+        alt: "CHRISTECK LV switchboard engineering services",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "LV Switchboard Engineering Services",
+    description:
+      "Explore LV switchboard engineering, IEC 61439 design verification, temperature-rise assessment, busbar design and technical documentation services.",
+    images: ["/images/hero-engineering-v1.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
