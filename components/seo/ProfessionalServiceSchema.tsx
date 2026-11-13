@@ -4,6 +4,7 @@ export default function ProfessionalServiceSchema() {
     "@type": "ProfessionalService",
     name: "CHRISTECK Engineering Services",
     url: "https://christeck.in/services",
+    image: "https://christeck.in/images/christeck-logo.png",
     description:
       "CHRISTECK provides LV switchboard engineering services for manufacturers, panel builders and engineering teams, with a primary focus on Australia and New Zealand, followed by India. Services include IEC 61439 design verification support, temperature-rise assessment, busbar system design and technical documentation.",
     provider: {
