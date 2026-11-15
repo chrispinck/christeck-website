@@ -20,6 +20,11 @@ const staticPages = [
     priority: 0.9,
     changeFrequency: "monthly" as const,
   },
+  {
+    path: "/knowledge",
+    priority: 0.9,
+    changeFrequency: "weekly" as const,
+  },
 ];
 
 const servicePages = [
@@ -29,6 +34,10 @@ const servicePages = [
   "/services/technical-documentation",
   "/services/modular-enclosure-solutions",
   "/services/busbar-system-design",
+];
+
+const knowledgePages = [
+  "/knowledge/iec-61439-design-verification-guide",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -41,6 +50,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
 
     ...servicePages.map((path) => ({
+      url: `${BASE_URL}${path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+
+    ...knowledgePages.map((path) => ({
       url: `${BASE_URL}${path}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,

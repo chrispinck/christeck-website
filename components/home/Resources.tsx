@@ -19,7 +19,7 @@ const resources = [
     description:
       "Understand design verification requirements, compliance methods and engineering best practices.",
     icon: BookOpen,
-    href: "/resources/iec-61439-design-verification",
+    href: "/knowledge/iec-61439-design-verification-guide",
     button: "Read Article",
     category: "Technical Guide",
   },
@@ -28,7 +28,7 @@ const resources = [
     description:
       "Learn how temperature rise calculations are performed using IEC TR 60890 methodology.",
     icon: Calculator,
-    href: "/resources/temperature-rise",
+    href: "/services/temperature-rise-assessment",
     button: "Learn More",
     category: "Engineering Guide",
   },

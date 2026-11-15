@@ -37,15 +37,15 @@ const services = [
 const standards = [
   {
     label: "IEC 61439",
-    href: "/resources/iec-61439-design-verification",
+    href: "/knowledge/iec-61439-design-verification-guide",
   },
   {
     label: "AS/NZS 61439",
-    href: "/resources/iec-61439-design-verification",
+    href: "/knowledge/iec-61439-design-verification-guide",
   },
   {
     label: "IEC TR 60890",
-    href: "/resources/temperature-rise",
+    href: "/services/temperature-rise-assessment",
   },
   {
     label: "Low Voltage Switchboards",
