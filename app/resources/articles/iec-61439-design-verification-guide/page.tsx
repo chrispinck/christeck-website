@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const url =
-  "https://christeck.in/knowledge/iec-61439-design-verification-guide";
+  "https://christeck.in/resources/articles/iec-61439-design-verification-guide";
 
 const title =
   "IEC 61439: Guide to LV Switchboard Design Verification";
@@ -49,7 +49,7 @@ const articleSchema = {
   },
   mainEntityOfPage: url,
   datePublished: "2026-11-15",
-  dateModified: "2026-11-15",
+  dateModified: "2026-11-16",
 };
 
 const crumbs = {
@@ -65,8 +65,8 @@ const crumbs = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Knowledge",
-      item: "https://christeck.in/knowledge",
+      name: "Resources",
+      item: "https://christeck.in/resources",
     },
     {
       "@type": "ListItem",
@@ -128,8 +128,8 @@ export default function ArticlePage() {
               Home
             </Link>{" "}
             /{" "}
-            <Link href="/knowledge" className="hover:text-[#176C73]">
-              Knowledge
+            <Link href="/resources" className="hover:text-[#176C73]">
+              Resources
             </Link>{" "}
             / IEC 61439
           </nav>
@@ -147,7 +147,7 @@ export default function ArticlePage() {
           </p>
 
           <p className="mt-2 text-sm text-slate-500">
-            CHRISTECK Engineering Knowledge · 8 min read
+            CHRISTECK Engineering Resources · 8 min read
           </p>
         </div>
       </header>
@@ -406,10 +406,10 @@ export default function ArticlePage() {
             </nav>
 
             <Link
-              href="/knowledge"
+              href="/resources"
               className="mt-4 block border-t pt-3 text-sm font-semibold text-[#176C73]"
             >
-              ← Knowledge Centre
+              ← Resources
             </Link>
           </div>
         </aside>

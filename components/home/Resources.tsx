@@ -17,19 +17,19 @@ const resources = [
   {
     title: "IEC 61439 Design Verification",
     description:
-      "Understand design verification requirements, compliance methods and engineering best practices.",
+      "Understand design verification requirements, compliance methods and engineering best practices for LV switchboards.",
     icon: BookOpen,
-    href: "/knowledge/iec-61439-design-verification-guide",
+    href: "/resources/articles/iec-61439-design-verification-guide",
     button: "Read Article",
     category: "Technical Guide",
   },
   {
     title: "Temperature Rise Assessment",
     description:
-      "Learn how temperature rise calculations are performed using IEC TR 60890 methodology.",
+      "Explore temperature-rise assessment principles, IEC TR 60890 methodology and thermal performance considerations.",
     icon: Calculator,
-    href: "/services/temperature-rise-assessment",
-    button: "Learn More",
+    href: "/resources/articles/temperature-rise-assessment-lv-switchboards",
+    button: "Read Article",
     category: "Engineering Guide",
   },
   {
@@ -56,7 +56,7 @@ export default function Resources() {
             transition={{ duration: 0.6 }}
           >
             <SectionHeading
-              eyebrow="Knowledge Centre"
+              eyebrow="Engineering Articles"
               title="Engineering"
               subtitle="Resources"
               description="Explore technical articles, engineering guides and downloadable resources to help you design reliable, standards-compliant low-voltage switchboards."

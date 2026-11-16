@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Engineering Downloads",
-  description: "CHRISTECK engineering resources and downloadable technical documents.",
+  title: "Engineering Downloads | CHRISTECK",
+  description:
+    "CHRISTECK engineering resources and downloadable technical documents.",
+  alternates: {
+    canonical: "https://christeck.in/resources/downloads",
+  },
 };
 
 export default function DownloadsPage() {
@@ -29,10 +33,10 @@ export default function DownloadsPage() {
         </p>
 
         <Link
-          href="/knowledge"
+          href="/resources"
           className="mt-8 inline-block rounded-lg bg-[#176C73] px-6 py-3 font-semibold text-white transition hover:bg-[#145d63]"
         >
-          Explore Knowledge Centre →
+          ← Back to Resources
         </Link>
       </div>
     </main>

@@ -18,34 +18,34 @@ const quickLinks = [
 const services = [
   {
     label: "IEC 61439 Design Verification",
-    href: "/services#design-verification",
+    href: "/services/iec-61439-design-verification",
   },
   {
     label: "Temperature Rise Assessment",
-    href: "/services#temperature-rise",
+    href: "/services/temperature-rise-assessment",
   },
   {
     label: "LV Switchboard Design",
-    href: "/services#switchboard-design",
+    href: "/services/lv-switchboard-engineering",
   },
   {
     label: "Technical Documentation",
-    href: "/services#documentation",
+    href: "/services/technical-documentation",
   },
 ];
 
 const standards = [
   {
     label: "IEC 61439",
-    href: "/knowledge/iec-61439-design-verification-guide",
+    href: "/resources/articles/iec-61439-design-verification-guide",
   },
   {
     label: "AS/NZS 61439",
-    href: "/knowledge/iec-61439-design-verification-guide",
+    href: "/resources/articles/iec-61439-design-verification-guide",
   },
   {
     label: "IEC TR 60890",
-    href: "/services/temperature-rise-assessment",
+    href: "/resources/articles/temperature-rise-assessment-lv-switchboards",
   },
   {
     label: "Low Voltage Switchboards",

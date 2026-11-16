@@ -16,7 +16,7 @@ export default function Home() {
       {/* Engineering Services */}
       <Services />
 
-      {/* Knowledge Centre */}
+      {/* Resources */}
       <Resources />
 
       {/* Contact CTA */}
