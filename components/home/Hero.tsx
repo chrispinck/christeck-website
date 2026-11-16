@@ -9,7 +9,7 @@ export default function Hero() {
       <Section
         background="light"
         spacing="md"
-        className="overflow-hidden pt-12 lg:pt-16"
+        className="flex min-h-[calc(100svh-80px)] items-center overflow-hidden pt-12 lg:pt-16"
       >
         <Container size="xl">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
