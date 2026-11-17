@@ -13,6 +13,7 @@ export default function BreadcrumbSchema({
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${items[items.length - 1]?.url ?? "https://christeck.in"}/#breadcrumb`,
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,

@@ -11,6 +11,11 @@ const staticPages = [
     changeFrequency: "monthly" as const,
   },
   {
+    path: "/about",
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  },
+  {
     path: "/contact",
     priority: 0.8,
     changeFrequency: "monthly" as const,
@@ -24,11 +29,6 @@ const staticPages = [
     path: "/resources",
     priority: 0.9,
     changeFrequency: "weekly" as const,
-  },
-  {
-    path: "/resources/downloads",
-    priority: 0.7,
-    changeFrequency: "monthly" as const,
   },
 ];
 
@@ -50,21 +50,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages.map((page) => ({
       url: `${BASE_URL}${page.path}`,
-      lastModified: new Date(),
       changeFrequency: page.changeFrequency,
       priority: page.priority,
     })),
 
     ...servicePages.map((path) => ({
       url: `${BASE_URL}${path}`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
 
     ...resourceArticles.map((path) => ({
       url: `${BASE_URL}${path}`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

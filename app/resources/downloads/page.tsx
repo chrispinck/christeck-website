@@ -3,16 +3,49 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Engineering Downloads | CHRISTECK",
+
   description:
-    "CHRISTECK engineering resources and downloadable technical documents.",
+    "Explore CHRISTECK engineering downloads, including LV switchboard engineering checklists, technical documents, calculation templates and practical resources.",
+
   alternates: {
-    canonical: "https://christeck.in/resources/downloads",
+    canonical: "/resources/downloads",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://christeck.in/resources/downloads",
+    siteName: "CHRISTECK",
+    title: "Engineering Downloads | CHRISTECK",
+    description:
+      "Explore engineering checklists, technical documents, calculation templates and practical resources for LV switchboard engineering.",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 1536,
+        height: 1024,
+        alt: "CHRISTECK Engineering Downloads",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Downloads | CHRISTECK",
+    description:
+      "Explore engineering checklists, technical documents and calculation templates for LV switchboard engineering.",
+    images: ["/images/hero-engineering-v1.png"],
+  },
+
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 
 export default function DownloadsPage() {
   return (
-    <main className="flex min-h-[70vh] items-center justify-center bg-slate-50 px-6">
+    <div className="flex min-h-[70vh] items-center justify-center bg-slate-50 px-6">
       <div className="max-w-2xl text-center">
         <span className="inline-block rounded-full bg-teal-100 px-4 py-2 text-sm font-semibold text-[#176C73]">
           CHRISTECK Engineering Resources
@@ -39,6 +72,6 @@ export default function DownloadsPage() {
           ← Back to Resources
         </Link>
       </div>
-    </main>
+    </div>
   );
 }

@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   FileText,
   CheckCircle2,
-  ClipboardCheck,
   BookOpen,
   ShieldCheck,
   ArrowRight,
@@ -18,35 +17,40 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "LV Switchboard Technical Documentation",
+
   description:
-    "Technical documentation for LV switchboards, including engineering reports, calculation sheets, design records and IEC 61439 documentation support.",
+    "Professional LV switchboard engineering documentation, including IEC 61439 design records, calculation reports, technical schedules and compliance documentation support across Australia, New Zealand and India.",
+
   alternates: {
     canonical: "/services/technical-documentation",
   },
+
   openGraph: {
     type: "website",
     url: "https://christeck.in/services/technical-documentation",
     siteName: "CHRISTECK",
-    title: "LV Switchboard Technical Documentation",
+    title: "LV Switchboard Technical Documentation | CHRISTECK",
     description:
-      "Structured engineering reports, calculation documentation, design records and compliance documentation support for LV switchboard projects.",
+      "Structured engineering reports, calculation sheets, design records and IEC 61439 documentation support for LV switchboard manufacturers and engineering teams.",
     locale: "en_IN",
     images: [
       {
         url: "/images/hero-engineering-v1.png",
-        width: 840,
-        height: 840,
-        alt: "CHRISTECK LV switchboard technical documentation",
+        width: 1536,
+        height: 1024,
+        alt: "CHRISTECK LV Switchboard Technical Documentation",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "LV Switchboard Technical Documentation",
+    title: "LV Switchboard Technical Documentation | CHRISTECK",
     description:
-      "Engineering reports, calculation sheets, design records and technical documentation for LV switchboard manufacturers.",
+      "Engineering reports, calculation sheets, design records and technical documentation for LV switchboard projects.",
     images: ["/images/hero-engineering-v1.png"],
   },
+
   robots: {
     index: true,
     follow: true,

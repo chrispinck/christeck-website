@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/hero-engineering-v1.png",
-        width: 1200,
-        height: 630,
+        width: 1536,
+        height: 1024,
         alt: "CHRISTECK Electrical Engineering Solutions",
       },
     ],
@@ -91,7 +91,7 @@ export default function AboutPage() {
         ]}
       />
 
-      <main>
+      <div>
         {/* Hero */}
         <Section className="relative overflow-hidden">
           <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-teal-100/40 blur-3xl" />
@@ -335,7 +335,7 @@ export default function AboutPage() {
             </div>
           </Container>
         </Section>
-      </main>
+      </div>
     </>
   );
 }

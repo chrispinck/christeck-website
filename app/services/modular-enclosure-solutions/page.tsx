@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   Ruler,
   Layers3,
-  ShieldCheck,
   ArrowRight,
   Settings,
   Factory,
@@ -18,35 +17,40 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Modular Enclosure Solutions for LV Switchboards",
+
   description:
-    "Modular electrical enclosure engineering for LV switchboards, including enclosure selection, dimensional coordination, assembly layouts and switchgear integration.",
+    "Modular enclosure engineering for LV switchboards, including enclosure selection, dimensional coordination, compartment layouts and switchgear integration across Australia, New Zealand and India.",
+
   alternates: {
     canonical: "/services/modular-enclosure-solutions",
   },
+
   openGraph: {
     type: "website",
     url: "https://christeck.in/services/modular-enclosure-solutions",
     siteName: "CHRISTECK",
-    title: "Modular Enclosure Solutions for LV Switchboards",
+    title: "Modular Enclosure Solutions for LV Switchboards | CHRISTECK",
     description:
       "Engineering support for modular electrical enclosures, dimensional coordination, compartment arrangements and LV switchboard integration.",
     locale: "en_IN",
     images: [
       {
         url: "/images/hero-engineering-v1.png",
-        width: 840,
-        height: 840,
-        alt: "CHRISTECK modular enclosure engineering solutions",
+        width: 1536,
+        height: 1024,
+        alt: "CHRISTECK Modular Enclosure Engineering Solutions",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Modular Enclosure Solutions for LV Switchboards",
+    title: "Modular Enclosure Solutions for LV Switchboards | CHRISTECK",
     description:
       "Engineering support for modular enclosure selection, dimensional coordination and LV switchboard assembly integration.",
     images: ["/images/hero-engineering-v1.png"],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -201,11 +205,11 @@ export default function ModularEnclosureSolutionsPage() {
               </p>
 
               <p className="mt-4 leading-8 text-slate-600">
-                CHRISTECK supports manufacturers, panel builders and
-                engineering teams with enclosure selection, dimensional
-                coordination and technical design reviews based on project
-                requirements.
-              </p>
+  CHRISTECK supports LV switchboard manufacturers, panel builders and
+  engineering teams across Australia, New Zealand and India with
+  enclosure selection, dimensional coordination, compartment layouts
+  and practical modular enclosure engineering.
+</p>
             </div>
 
             <div className="rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 to-white p-8 sm:p-10">

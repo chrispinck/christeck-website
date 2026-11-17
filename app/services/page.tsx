@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ServicesExplorer from "@/components/services/ServicesExplorer";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import ProfessionalServiceSchema from "@/components/seo/ProfessionalServiceSchema";
 
 export const metadata: Metadata = {
   title: "LV Switchboard Engineering Services | CHRISTECK",
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/hero-engineering-v1.png",
-        width: 1200,
-        height: 630,
+        width: 1536,
+        height: 1024,
         alt: "CHRISTECK LV Switchboard Engineering Services",
       },
     ],
@@ -41,6 +42,8 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      <ProfessionalServiceSchema />
+
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "/" },

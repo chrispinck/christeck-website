@@ -5,7 +5,6 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import OrganizationSchema from "@/components/seo/OrganizationSchema";
-import ProfessionalServiceSchema from "@/components/seo/ProfessionalServiceSchema";
 
 const siteUrl = "https://christeck.in";
 
@@ -59,10 +58,6 @@ export const metadata: Metadata = {
   creator: "CHRISTECK",
   publisher: "CHRISTECK",
 
-  alternates: {
-    canonical: "/",
-  },
-
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -74,8 +69,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/hero-engineering-v1.png",
-        width: 840,
-        height: 840,
+        width: 1536,
+        height: 1024,
         alt: "CHRISTECK LV switchboard engineering solutions",
       },
     ],
@@ -122,7 +117,6 @@ export default function RootLayout({
     >
       <body className="bg-white text-slate-900 antialiased">
         <OrganizationSchema />
-        <ProfessionalServiceSchema />
 
         <Navbar />
 

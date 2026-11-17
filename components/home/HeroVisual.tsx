@@ -106,8 +106,8 @@ export default function HeroVisual() {
         <Image
           src="/images/hero-engineering-v1.png"
           alt="CHRISTECK low-voltage switchboard engineering"
-          width={840}
-          height={840}
+          width={1536}
+          height={1024}
           priority
           className="h-auto w-full select-none drop-shadow-[0_45px_70px_rgba(15,23,42,0.22)]"
         />

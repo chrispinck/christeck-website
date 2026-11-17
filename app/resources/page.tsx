@@ -7,9 +7,11 @@ export const metadata: Metadata = {
   title: "Engineering Resources | CHRISTECK",
   description:
     "Explore engineering articles, technical guides and engineering downloads covering LV switchboard design, IEC 61439 and temperature-rise assessment.",
+
   alternates: {
     canonical: "/resources",
   },
+
   openGraph: {
     type: "website",
     url: "https://christeck.in/resources",
@@ -18,7 +20,24 @@ export const metadata: Metadata = {
     description:
       "Engineering knowledge, technical guides and practical resources for LV switchboard manufacturers, panel builders and electrical engineers.",
     locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 1536,
+        height: 1024,
+        alt: "CHRISTECK Engineering Knowledge and Technical Resources",
+      },
+    ],
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Resources | CHRISTECK",
+    description:
+      "Explore technical articles, engineering guides and practical resources covering LV switchboard design, IEC 61439 and temperature-rise assessment.",
+    images: ["/images/hero-engineering-v1.png"],
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -66,12 +85,15 @@ export default function ResourcesPage() {
                 <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600">
                   IEC 61439
                 </span>
+
                 <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600">
                   Temperature Rise
                 </span>
+
                 <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600">
                   Busbar Engineering
                 </span>
+
                 <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600">
                   LV Switchboards
                 </span>

@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/hero-engineering-v1.png",
-        width: 840,
-        height: 840,
+        width: 1536,
+        height: 1024,
         alt: "CHRISTECK IEC 61439 engineering support",
       },
     ],

@@ -2,9 +2,10 @@ export default function OrganizationSchema() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://christeck.in/#organization",
     name: "CHRISTECK",
     url: "https://christeck.in",
-    logo: "https://christeck.in/images/christeck-logo.png",
+    logo: "https://christeck.in/logo/christeck-logo.png",
     description:
       "CHRISTECK provides professional LV switchboard engineering, IEC 61439 design verification support, temperature-rise assessment, busbar design and technical documentation.",
     knowsAbout: [

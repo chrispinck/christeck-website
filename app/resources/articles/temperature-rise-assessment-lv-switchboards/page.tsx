@@ -4,34 +4,86 @@ import {
   ArrowRight,
   Thermometer,
   CircuitBoard,
-  Wind,
   ShieldCheck,
-  Calculator,
 } from "lucide-react";
 
 import Container from "@/components/ui/Container";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
+const url =
+  "https://christeck.in/resources/articles/temperature-rise-assessment-lv-switchboards";
+
+const title = "Temperature Rise Assessment of LV Switchboards";
+
+const description =
+  "Understand temperature-rise assessment of LV switchboards, heat sources, IEC 61439 verification, IEC TR 60890 calculations and ventilation considerations.";
+
+const organizationId = "https://christeck.in/#organization";
+
 export const metadata: Metadata = {
-  title: "Temperature Rise Assessment of LV Switchboards",
-  description:
-    "Understand temperature-rise assessment of LV switchboards, heat sources, IEC 61439 verification, IEC TR 60890 calculations and ventilation considerations.",
+  title,
+  description,
+
   alternates: {
-    canonical:
-      "/resources/articles/temperature-rise-assessment-lv-switchboards",
+    canonical: "/resources/articles/temperature-rise-assessment-lv-switchboards",
   },
+
   openGraph: {
     type: "article",
-    url: "https://christeck.in/resources/articles/temperature-rise-assessment-lv-switchboards",
+    url,
     siteName: "CHRISTECK",
-    title: "Temperature Rise Assessment of LV Switchboards",
+    title,
     description:
       "An engineering guide covering thermal behaviour, temperature-rise calculations and verification considerations for LV switchboard assemblies.",
     locale: "en_IN",
+    images: [
+      {
+        url: "/images/hero-engineering-v1.png",
+        width: 1536,
+        height: 1024,
+        alt: "Temperature Rise Assessment of LV Switchboards",
+      },
+    ],
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/hero-engineering-v1.png"],
+  },
+
   robots: {
     index: true,
     follow: true,
+  },
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": `${url}#article`,
+  headline: title,
+  description,
+  image: ["https://christeck.in/images/hero-engineering-v1.png"],
+  author: {
+    "@type": "Organization",
+    "@id": organizationId,
+    name: "CHRISTECK",
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": organizationId,
+    name: "CHRISTECK",
+    url: "https://christeck.in",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://christeck.in/logo/christeck-logo.png",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": url,
   },
 };
 
@@ -129,6 +181,7 @@ const sections = [
     bullets: [
       "Switchboard rated current and loading conditions.",
       "Component power losses and conductor losses.",
+      "Busbar material (copper or aluminium), dimensions, arrangement, operating current and associated power losses.",
       "Enclosure dimensions and effective surface areas.",
       "Number and arrangement of tiers or compartments.",
       "Internal separation and equipment layout.",
@@ -200,6 +253,13 @@ const sections = [
 export default function TemperatureRiseArticlePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://christeck.in/" },
@@ -265,7 +325,7 @@ export default function TemperatureRiseArticlePage() {
                 Article Contents
               </h2>
 
-              <nav className="mt-5 space-y-3">
+              <nav aria-label="Article contents" className="mt-5 space-y-3">
                 {sections.map((section) => (
                   <a
                     key={section.id}
@@ -292,8 +352,8 @@ export default function TemperatureRiseArticlePage() {
                     </h2>
                     <p className="mt-2 text-sm leading-7 text-slate-600">
                       This article provides general engineering information.
-                      Project-specific temperature-rise assessment and IEC 61439
-                      verification require evaluation of the applicable
+                      Project-specific temperature-rise assessment and IEC
+                      61439 verification require evaluation of the applicable
                       requirements, assembly configuration, operating
                       conditions and supporting technical evidence.
                     </p>
