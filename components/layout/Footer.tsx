@@ -1,3 +1,4 @@
+import CookiePreferencesButton from "@/components/privacy/CookiePreferencesButton";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,6 +14,7 @@ const quickLinks = [
   { label: "Services", href: "/services" },
   { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy" },
 ];
 
 const services = [
@@ -176,13 +178,15 @@ export default function Footer() {
             . All Rights Reserved.
           </p>
 
-          <p className="text-slate-500">
-            Engineering Knowledge.
-            <span className="font-semibold text-[#2BA9B5]">
-              {" "}
-              Engineering Services.
-            </span>
-          </p>
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-5">
+            <CookiePreferencesButton />
+
+            <p className="text-slate-500">
+  <span className="font-semibold text-[#2BA9B5]">
+    Electrical Engineering Solutions
+  </span>
+</p>
+          </div>
         </div>
       </div>
     </footer>

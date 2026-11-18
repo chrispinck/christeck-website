@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import OrganizationSchema from "@/components/seo/OrganizationSchema";
+import CookieConsent from "@/components/privacy/CookieConsent";
 
 const siteUrl = "https://christeck.in";
 
@@ -116,6 +118,26 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
       <body className="bg-white text-slate-900 antialiased">
+        {/* Google Consent Mode: Default consent is denied */}
+        <Script
+          id="google-consent-mode"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500
+              });
+            `,
+          }}
+        />
+
         <OrganizationSchema />
 
         <Navbar />
@@ -123,6 +145,8 @@ export default function RootLayout({
         <main className="min-h-screen pt-20">{children}</main>
 
         <Footer />
+
+        <CookieConsent />
       </body>
     </html>
   );
