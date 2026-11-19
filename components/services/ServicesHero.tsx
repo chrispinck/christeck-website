@@ -14,7 +14,7 @@ export default function ServicesHero() {
         </>
       }
       description="CHRISTECK delivers professional low-voltage electrical engineering solutions, including IEC 61439 design verification, temperature rise assessment, LV switchboard engineering, technical documentation, modular enclosure solutions, and Australian standards support for industrial and commercial projects."
-      image="/images/hero-engineering-v1.png"
+      image="/images/hero-engineering-v1.webp"
       imageAlt="CHRISTECK Engineering Services"
       primaryButton={{
         label: "Request Consultation",

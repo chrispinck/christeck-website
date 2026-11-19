@@ -8,7 +8,7 @@ export default function Logo() {
       className="flex items-center transition-opacity duration-300 hover:opacity-90"
     >
       <Image
-        src="/logo/christeck-logo.png"
+        src="/logo/christeck-logo.webp"
         alt="CHRISTECK Electrical Engineering Solutions"
         width={220}
         height={58}

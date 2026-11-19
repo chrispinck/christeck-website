@@ -103,12 +103,14 @@ export default function HeroVisual() {
         }}
         className="relative z-20 w-full max-w-[390px] translate-x-2 sm:max-w-[500px] sm:translate-x-4 lg:max-w-[620px] lg:translate-x-8"
       >
-        <Image
-          src="/images/hero-engineering-v1.png"
+            <Image
+          src="/images/hero-engineering-v1.webp"
           alt="CHRISTECK low-voltage switchboard engineering"
           width={1536}
           height={1024}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 620px"
           priority
+          fetchPriority="high"
           className="h-auto w-full select-none drop-shadow-[0_45px_70px_rgba(15,23,42,0.22)]"
         />
       </motion.div>

@@ -20,6 +20,7 @@ interface PageHeroProps {
   description: string;
   image: string;
   imageAlt: string;
+  imagePriority?: boolean;
   primaryButton?: ButtonProps;
   secondaryButton?: ButtonProps;
   badges?: string[];
@@ -32,6 +33,7 @@ export default function PageHero({
   description,
   image,
   imageAlt,
+  imagePriority = false,
   primaryButton,
   secondaryButton,
   badges = [],
@@ -135,7 +137,9 @@ export default function PageHero({
               alt={imageAlt}
               width={700}
               height={700}
-              priority
+              sizes="(max-width: 1024px) 100vw, 620px"
+              priority={imagePriority}
+              fetchPriority={imagePriority ? "high" : "auto"}
               className="relative z-10 h-auto w-full max-w-[620px]"
             />
           </motion.div>
