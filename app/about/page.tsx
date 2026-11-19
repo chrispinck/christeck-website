@@ -84,10 +84,10 @@ const expertise = [
 export default function AboutPage() {
   return (
     <>
-      <BreadcrumbSchema
+            <BreadcrumbSchema
         items={[
-          { name: "Home", url: "/" },
-          { name: "About", url: "/about" },
+          { name: "Home", url: "https://christeck.in/" },
+          { name: "About", url: "https://christeck.in/about" },
         ]}
       />
 

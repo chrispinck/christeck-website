@@ -7,18 +7,28 @@ type BreadcrumbSchemaProps = {
   items: BreadcrumbItem[];
 };
 
+const SITE_URL = "https://christeck.in";
+
 export default function BreadcrumbSchema({
   items,
 }: BreadcrumbSchemaProps) {
+  const validItems = items.filter(
+    (item) => item.name.trim() && item.url.trim()
+  );
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "@id": `${items[items.length - 1]?.url ?? "https://christeck.in"}/#breadcrumb`,
-    itemListElement: items.map((item, index) => ({
+    "@id": `${new URL(
+      validItems[validItems.length - 1]?.url || "/",
+      SITE_URL
+    ).toString()}#breadcrumb`,
+
+    itemListElement: validItems.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.url,
+      item: new URL(item.url, SITE_URL).toString(),
     })),
   };
 
@@ -26,7 +36,10 @@ export default function BreadcrumbSchema({
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        __html: JSON.stringify(breadcrumbSchema).replace(
+          /</g,
+          "\\u003c"
+        ),
       }}
     />
   );

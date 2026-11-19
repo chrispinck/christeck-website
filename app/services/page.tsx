@@ -44,10 +44,10 @@ export default function ServicesPage() {
     <>
       <ProfessionalServiceSchema />
 
-      <BreadcrumbSchema
+            <BreadcrumbSchema
         items={[
-          { name: "Home", url: "/" },
-          { name: "Services", url: "/services" },
+          { name: "Home", url: "https://christeck.in/" },
+          { name: "Services", url: "https://christeck.in/services" },
         ]}
       />
 
